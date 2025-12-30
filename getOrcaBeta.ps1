@@ -65,7 +65,7 @@ if (Test-Path $expectedExtractDir) {
 
 # If we get here, need to download/update
 $downloadUrl = $asset.browser_download_url
-$downloadsFolder = (New-Object -ComObject Shell.Application).Namespace(0x14).Self.Path
+$downloadsFolder = (New-Object -ComObject Shell.Application).Namespace('shell:Downloads').Self.Path
 $zipPath = Join-Path $downloadsFolder $fileName
 
 Write-Host "New build detected ($version). Downloading $fileName..."
